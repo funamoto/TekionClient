@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TekionClient.LoginPage"
+             NavigationPage.HasNavigationBar="False">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="0,20,0,0"/>
+  </ContentPage.Padding>
+  <StackLayout BackgroundColor="#00B2EC"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand">
+    <StackLayout Padding="25"
+                 Spacing="20"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="CenterAndExpand">
+      <StackLayout Padding="50">
+        <Image Source="logo.png" />
+      </StackLayout>
+
+      <Entry x:Name="usernameEntry"
+             Placeholder="Username"/>
+      <Entry x:Name="tokenEntry"
+             Placeholder="Token"/>
+      <Button x:Name="loginButton"
+              Text="Login"
+              TextColor="#00B2EC"
+              BackgroundColor="White"
+              BorderRadius="15"
+              HeightRequest="40"
+              WidthRequest="150"/>
+      <Label x:Name="statusLabel"
+             IsVisible="False"
+             HorizontalTextAlignment="Center"
+             HeightRequest="40"
+             Text="Loading..."/>
+      <Label x:Name="failedLabel"
+             TextColor="#FF0000"
+             IsVisible="False"
+             HorizontalTextAlignment="Center"
+             HeightRequest="40"
+             Text="Login failed"/>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TekionClient.VotePage"
+             NavigationPage.HasNavigationBar="False">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="0,20,0,0"/>
+  </ContentPage.Padding>
+  <StackLayout BackgroundColor="#00B2EC"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand">
+    <StackLayout Padding="25"
+                 Spacing="20"
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+      <StackLayout Padding="50">
+        <Image Source="logo.png" />
+      </StackLayout>
+      <Label Text="Vote"
+             FontAttributes="Bold"
+             HorizontalTextAlignment="Center"/>
+      <StackLayout Spacing="10"
+                   Orientation="Horizontal"
+                   HorizontalOptions="CenterAndExpand">
+        <Button x:Name="coldButton"
+                TextColor="#0000FF"
+                BackgroundColor="White"
+                BorderRadius="25"
+                Text="さむい"
+                HeightRequest="40"
+                WidthRequest="100"/>
+        <Button x:Name="goodButton"
+                TextColor="#00B2EC"
+                BackgroundColor="White"
+                BorderRadius="25"
+                Text="ちょうどいい"
+                HeightRequest="40"
+                WidthRequest="100"/>
+        <Button x:Name="hotButton"
+                TextColor="#FF0000"
+                BackgroundColor="White"
+                BorderRadius="25"
+                Text="あつい"
+                HeightRequest="40"
+                WidthRequest="100"/>
+      </StackLayout>
+      <Label x:Name="statusLabel"
+             HorizontalTextAlignment="Center"
+             Text="status"/>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

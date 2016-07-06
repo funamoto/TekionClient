@@ -12,7 +12,8 @@ namespace TekionClient
         public App()
         {
             // The root page of your application
-            MainPage = new VotePage();
+            // NavigationPageを使用して最初のページを表示する
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()
