@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.Net.Http;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace TekionClient
 {
@@ -26,11 +27,23 @@ namespace TekionClient
             this.token = token;
         }
 
-        public async Task<HttpResponseMessage> GetDisplay()
+        public async Task<DisplayModel> GetDisplay()
         {
             var url = string.Format(DISPLAY_URL_FORMAT, host, user, token);
             var httpClient = new HttpClient();
-            return await httpClient.GetAsync(url);
+            var response = await httpClient.GetAsync(url);
+            if (!response.IsSuccessStatusCode)
+            {
+                return null;
+            }
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+            if (String.IsNullOrEmpty(responseContent))
+            {
+                return null;
+            }
+
+            return JsonConvert.DeserializeObject<DisplayModel>(responseContent);
         }
 
         public async Task<String> Vote(int code)

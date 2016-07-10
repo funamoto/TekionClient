@@ -14,40 +14,119 @@
                  Spacing="20"
                  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
-      <StackLayout Padding="50">
+      <StackLayout Padding="30">
         <Image Source="logo.png" />
       </StackLayout>
-      <Label Text="Vote"
+      <Label x:Name="updateLabel"
+             Text="update"
+             TextColor="White"
+             FontSize="15"
              FontAttributes="Bold"
-             HorizontalTextAlignment="Center"/>
-      <StackLayout Spacing="10"
-                   Orientation="Horizontal"
-                   HorizontalOptions="CenterAndExpand">
-        <Button x:Name="coldButton"
-                TextColor="#0000FF"
-                BackgroundColor="White"
-                BorderRadius="25"
-                Text="さむい"
-                HeightRequest="40"
-                WidthRequest="100"/>
-        <Button x:Name="goodButton"
-                TextColor="#00B2EC"
-                BackgroundColor="White"
-                BorderRadius="25"
-                Text="ちょうどいい"
-                HeightRequest="40"
-                WidthRequest="100"/>
-        <Button x:Name="hotButton"
-                TextColor="#FF0000"
-                BackgroundColor="White"
-                BorderRadius="25"
-                Text="あつい"
-                HeightRequest="40"
-                WidthRequest="100"/>
-      </StackLayout>
+             VerticalOptions="End"
+             VerticalTextAlignment="End"
+             HorizontalTextAlignment="Center">
+        <Label.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnUpdateLabelClicked"/>
+        </Label.GestureRecognizers>
+      </Label>
       <Label x:Name="statusLabel"
              HorizontalTextAlignment="Center"
              Text="status"/>
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Row="0" Grid.Column="0"
+                     VerticalOptions="Start">
+          <Label Text="Result"
+                 FontAttributes="Bold"
+                 HorizontalTextAlignment="Center"/>
+          <Image x:Name="resultImage"
+                  Source="result_good.png" />
+          <Label x:Name="resultLabel"
+                 Text="good"
+                 TextColor="White"
+                 FontSize="15"
+                 FontAttributes="Bold"
+                 HorizontalTextAlignment="Center"/>
+        </StackLayout>
+        <StackLayout Grid.Row="0" Grid.Column="1"
+                     VerticalOptions="Start">
+          <Label Text="weather"
+                 FontAttributes="Bold"
+                 HorizontalTextAlignment="Center"/>
+          <Image x:Name="weatherImage"
+                 Source="weather_none.png" />
+          <Label x:Name="weatherLabel"
+                 Text="none"
+                 TextColor="White"
+                 FontSize="15"
+                 FontAttributes="Bold"
+                 HorizontalTextAlignment="Center"/>
+        </StackLayout>
+        <StackLayout Grid.Row="0" Grid.Column="2"
+                     VerticalOptions="Start">
+          <Label Text="temperature"
+                 FontAttributes="Bold"
+                 HorizontalTextAlignment="Center"/>
+          <Label x:Name="temparatureLabel"
+                 Text="--°"
+                 TextColor="White"
+                 FontSize="40"
+                 FontAttributes="Bold"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalTextAlignment="Center"
+                 HorizontalTextAlignment="Center"/>
+        </StackLayout>
+      </Grid>
+      <StackLayout>
+        <Label Text="Vote"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"/>
+        <Grid ColumnSpacing="10">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Button x:Name="coldButton"
+                  VerticalOptions="Center"
+                  HorizontalOptions="FillAndExpand"
+                  TextColor="#0000FF"
+                  BackgroundColor="White"
+                  BorderRadius="25"
+                  Text="さむい"
+                  HeightRequest="40"
+                  Grid.Row="0" Grid.Column="0"/>
+          <Button x:Name="goodButton"
+                  VerticalOptions="Center"
+                  HorizontalOptions="FillAndExpand"
+                  TextColor="#00B2EC"
+                  BackgroundColor="White"
+                  BorderRadius="25"
+                  Text="テキオン"
+                  HeightRequest="40"
+                  Grid.Row="0" Grid.Column="1"/>
+          <Button x:Name="hotButton"
+                  VerticalOptions="Center"
+                  HorizontalOptions="FillAndExpand"
+                  TextColor="#FF0000"
+                  BackgroundColor="White"
+                  BorderRadius="25"
+                  Text="あつい"
+                  HeightRequest="40"
+                  Grid.Row="0" Grid.Column="2"/>
+        </Grid>
+      </StackLayout>
     </StackLayout>
   </StackLayout>
 </ContentPage>

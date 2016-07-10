@@ -3312,8 +3312,32 @@ namespace TekionClient.Droid
 			// aapt resource value: 0x7f020063
 			public const int mr_ic_settings_light = 2130837603;
 			
+			// aapt resource value: 0x7f02006c
+			public const int notification_template_icon_bg = 2130837612;
+			
 			// aapt resource value: 0x7f020064
-			public const int notification_template_icon_bg = 2130837604;
+			public const int result_cold = 2130837604;
+			
+			// aapt resource value: 0x7f020065
+			public const int result_good = 2130837605;
+			
+			// aapt resource value: 0x7f020066
+			public const int result_hot = 2130837606;
+			
+			// aapt resource value: 0x7f020067
+			public const int weather_cloud = 2130837607;
+			
+			// aapt resource value: 0x7f020068
+			public const int weather_none = 2130837608;
+			
+			// aapt resource value: 0x7f020069
+			public const int weather_rain = 2130837609;
+			
+			// aapt resource value: 0x7f02006a
+			public const int weather_snow = 2130837610;
+			
+			// aapt resource value: 0x7f02006b
+			public const int weather_sunny = 2130837611;
 			
 			static Drawable()
 			{

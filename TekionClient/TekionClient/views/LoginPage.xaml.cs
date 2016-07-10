@@ -22,22 +22,17 @@ namespace TekionClient
             SetLoading(true);
             var connection = new Connection(usernameEntry.Text, tokenEntry.Text);
             var result = await connection.GetDisplay();
-            if (result.IsSuccessStatusCode)
-            {
-                SetLoading(false);
-                failedLabel.IsVisible = false;
-                await Navigation.PushAsync(new VotePage(connection));
-            }
-            else
+            if (result == null)
             {
                 SetLoading(false);
                 failedLabel.IsVisible = true;
             }
-        }
-
-        private void SetLoading(object p)
-        {
-            throw new NotImplementedException();
+            else
+            {
+                SetLoading(false);
+                failedLabel.IsVisible = false;
+                await Navigation.PushAsync(new VotePage(connection, result));
+            }
         }
 
         private void SetLoading(Boolean loading)
